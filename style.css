@@ -36,7 +36,7 @@ body {
     justify-content: center;
     position: fixed; /* use fixed to keep it in place while scrolling */
     top: 10%;
-    left: 3%;
+    left: 5%;
     height: 80vh;
     width: 30vh;
     background-color: rgb(20, 20, 20);
@@ -50,7 +50,7 @@ body {
     justify-content: center;
     position: fixed; /* use fixed to keep it in place while scrolling */
     top: 10%;
-    right: 3%;
+    right: 5%;
     height: 80vh;
     width: 30vh;
     background-color: rgb(20, 20, 20);
