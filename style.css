@@ -47,12 +47,50 @@ body {
 #deleteButton {}
 #resetButton {}
 
+#calculateButton:hover {
+    background: #007BFF;
+    box-shadow: #007BFF 0 10px 20px -10px;
+}
+
+#placeButton:hover {
+    background: #28A745;
+    box-shadow: #28A745 0 10px 20px -10px;
+}
+
+#deleteButton:hover {
+    background: #FF3D3D;
+    box-shadow: #FF3D3D 0 10px 20px -10px;
+}
+
+#resetButton:hover {
+    background: #FF3D3D;
+    box-shadow: #FF3D3D 0 10px 20px -10px;
+}
+
 .controlButton {
     text-align: center;
     white-space: nowrap;
     text-overflow: ellipsis;
     width: 100px;
     height: 40px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.controlButton:hover {
+    animation: pulse 0.5s ease backwards;
 }
 
 .button {
