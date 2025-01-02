@@ -20,11 +20,26 @@
     ></script>
     <script src="app.js"></script>
     <h1 class="text-center">Dijkstra's Algorithm Demo · v1.0.0</h1>
-    <div class="container-fluid">
-      <link href="grid_styles.css" rel="stylesheet" />
-      <div class="grid-container">
-        <div class="grid" id="workspace"></div>
-      </div>
+    <div
+      class="container"
+      id="workspace"
+      style="
+        display: grid;
+        border-radius: 2%;
+        width: 70vh;
+        height: 70vh;
+        justify-items: center;
+        align-items: center;
+      "
+    ></div>
+    <div
+      class="container"
+      id="button-container"
+      style="display: flex; justify-content: center; margin-top: 10px"
+    >
+      <button type="button" class="btn btn-primary" id="place-node">
+        Place Node
+      </button>
     </div>
   </body>
 </html>
