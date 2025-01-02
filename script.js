@@ -4,21 +4,30 @@ const DOT_SIZE = 5; // NxN dot (pixels)
 const DOT_COLOR = "#000000"; // Color of each dot
 const NODE_COLOR = "#0000FF"; // Color of each node
 const NODE_SIZE = DOT_SIZE * 2; // NxN node (pixels)
-
-// TODO: Add a max number of placable nodes
-// TODO: cool animation for drawing the best path calculated by the algorithm
-// TODO: If the placement button is hovered while in placement state, change the button text to "Cancel"
+const MAX_NODES = 10; // Maximum number of placeable nodes
 
 let STATE = "idle"; // idle, placing-node, placing-edge
-const CLAMP = (value, min, max) => Math.min(Math.max(value, min), max);
+
 /*
+// TODO: Cool animation for drawing the best path calculated by the algorithm
+// TODO: Make it so if a node is x distance away from another node, it isn't allowed to be placed
+// TODO: Add a max number of placable nodes
+// TODO: If the placement button is hovered while in placement state, change the button text to "Cancel". Make the cursor a pointer/appear when you leave the grid and hide the node
+// TODO: Check if state is, placing-node if it is, cancel the placement by removing the node and reseting the state
+// TODO: Also change the button text to "Cancel" if it's hovered while in placement state
+// TODO: Make sure to place the node in the center of the grid, or the current mouse pos (clamp it in if it is outside the grid)
+// TODO: make sure to reset the cursor to default after placement is done
+// TODO: Track & Check if there's already a node there    
+// TODO: Disconnect the mousemove event listener
+// TODO: Check if the click is within the grid
+IGNORE THIS
+Unrelated to the project just a random idea I had for something else
 Maintain a list of unoccupied nodes
 Choose a random node, pop that node from the list
 */
 
+const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 function placeNode() {
-    // TODO: Check if state is, placing-node if it is, cancel the placement by removing the node and reseting the state
-    // TODO: Also change the button text to "Cancel" if it's hovered while in placement state
     const workspace = document.getElementById("workspace");
     const workspaceDimensions = workspace.getBoundingClientRect();
     const node = document.createElement("div");
@@ -26,9 +35,7 @@ function placeNode() {
     node.style.height = `${NODE_SIZE}px`;
     node.style.backgroundColor = NODE_COLOR;
     node.style.borderRadius = "50%";
-    node.style.position = "absolute";
-    // TODO: Make sure to place the node in the center of the grid, or the current mouse pos (clamp it in if it is outside the grid)
-    // TODO: make sure to reset the cursor to default after placement is done
+    node.style.position = "absolute";    
     workspace.style.cursor = "none";
     workspace.appendChild(node);
 
@@ -37,11 +44,8 @@ function placeNode() {
         node.style.top = `${data.clientY}px`;
     });
     
-    // TODO: Track & Check if there's already a node there
     document.addEventListener("click", function (data) {
-        // TODO: Disconnect the mousemove event listener
-        console.log("Place node at:", data.clientX, data.clientY);
-        // TODO: Check if the click is within the grid
+        console.log("Place node at:", data.clientX, data.clientY);        
     });
 }
 
