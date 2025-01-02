@@ -35,11 +35,22 @@
     <div
       class="container"
       id="button-container"
-      style="display: flex; justify-content: center; margin-top: 10px"
+      style="
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        flex-direction: row;
+        gap: 5px;
+      "
     >
       <button type="button" class="btn btn-primary" id="place-node">
         Place Node
       </button>
+    </div>
+    <div id="node-counter" style="text-align: center; margin-top: 10px; visibility: hidden;">
+      <h5>
+        Nodes (0 / 0)
+      </h5>
     </div>
   </body>
 </html>
