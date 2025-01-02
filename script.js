@@ -76,6 +76,7 @@ function placeNode(clickData) {
   workspace.appendChild(node);
 
   onMouseMovePlacingNode = (data) => {
+    if (state !== "placing-node") return;
     const x = clamp(
       data.clientX - NODE_SIZE / 2,
       workspaceDimensions.left,
@@ -91,6 +92,7 @@ function placeNode(clickData) {
   };
 
   onMouseClickPlacingNode = (data) => {
+    if (state !== "placing-node") return;
     const x = clamp(
       data.clientX - NODE_SIZE / 2,
       workspaceDimensions.left,
@@ -109,7 +111,6 @@ function placeNode(clickData) {
       data.clientY < workspaceDimensions.top ||
       data.clientY > workspaceDimensions.bottom
     ) {
-      console.log("click is outside grid bounds");
       return;
     }
 
